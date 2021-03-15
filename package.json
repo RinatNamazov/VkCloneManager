@@ -1,0 +1,29 @@
+{
+  "name": "vk-clone-manager",
+  "version": "1.1.2",
+  "description": "Centralized management of multiple VK accounts.",
+  "author": "Rinat Namazov",
+  "license": "GPL-3.0-or-later",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js || exit 0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RinatNamazov/VkCloneManager.git"
+  },
+  "keywords": [
+    "vk",
+    "clones",
+    "manager"
+  ],
+  "dependencies": {
+    "easyvk": "^2.8.2",
+    "inquirer": "^8.0.0",
+    "rucaptcha-client": "^2.0.2",
+    "yargs": "^16.2.0"
+  }
+}
