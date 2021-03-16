@@ -3,6 +3,7 @@ VkCloneManager is a [VK](https://vk.com) accounts manager for centralized action
 
 ![VkCloneManagerInterface](/images/VkCloneManagerInterface.png)
 
+The original idea is taken from here: https://github.com/galqiwi/vk-clones
 <details>
   <summary>Funny screenshots</summary>
 
