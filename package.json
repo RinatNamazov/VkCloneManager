@@ -1,6 +1,6 @@
 {
   "name": "vk-clone-manager",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Centralized management of multiple VK accounts.",
   "author": "Rinat Namazov",
   "license": "GPL-3.0-or-later",

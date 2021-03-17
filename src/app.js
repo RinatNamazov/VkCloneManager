@@ -71,7 +71,7 @@ async function main() {
 		return;
 	}
 
-	console.log(`VkCloneManager v.1.1.2
+	console.log(`VkCloneManager v.1.1.3
 Developer: Rinat Namazov
 Copyright (c) 2021 RINWARES <rinwares.com>
 `);
