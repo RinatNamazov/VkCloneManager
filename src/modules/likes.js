@@ -34,25 +34,39 @@ async function advancedLike(accounts) {
 }
 
 async function likeUserProfilePhoto(accounts) {
-	const ownerId = await utils.terminalReadId("What is the ID of the user whose avatar you want to like?");
+	const userIds = await utils.terminalReadUserList(accounts, "Where to get the list of users to need like profile photo?");
 
-	let user;
+	let users;
 	try {
-		user = await accounts[0].call("users.get", { user_ids: ownerId, fields: "has_photo, photo_id" });
-		user = user[0];
+		users = await accounts[0].call("users.get", { user_ids: userIds.join(","), fields: "has_photo, photo_id" });
 	} catch (err) {
 		console.log(err);
-	}
-	if (!user.has_photo) {
-		console.log("This user does not have an avatar.");
 		return;
 	}
-	itemId = user.photo_id.split("_")[1];
 
-	for (let i in accounts) {
-		await accounts[i].call("likes.add", { type: "photo", owner_id: ownerId, item_id: itemId })
-			.catch(e => console.log(e));
-		await utils.sleep(50);
+	for (let i in users) {
+		if (typeof(i) != "number") { // Ignore 'queryData'.
+			continue;
+		}
+
+		const user = users[i];
+		if (!user.has_photo) {
+			console.log(`User with id ${user.id} does not have an avatar.`);
+			continue;
+		}
+		if (!user.can_access_closed) {
+			console.log(`User with id ${user.id} has a closed profile and you do not have access to view it.`);
+			continue;
+		}
+		
+		// The real photo ID is contained in the second part: ownerId_photoId
+		const itemId = user.photo_id.split("_")[1];
+
+		for (let i in accounts) {
+			await accounts[i].call("likes.add", { type: "photo", owner_id: user.id, item_id: itemId })
+				.catch(e => console.log(e));
+			await utils.sleep(50);
+		}
 	}
 }
 
