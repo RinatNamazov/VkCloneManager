@@ -14,6 +14,7 @@ Thanks to [EvgeN 1137](https://github.com/evgen1137) for providing screenshots f
 ![VkCloneManagerPhoto2](/images/VkCloneManagerPhoto2.jpg)
 ![VkCloneManagerPhoto3](/images/VkCloneManagerPhoto3.jpg)
 ![VkCloneManagerPhoto4](/images/VkCloneManagerPhoto4.jpg)
+![VkCloneManagerPhoto4](/images/VkCloneManagerPhoto5.jpg)
 </details>
 
 ## Installation
