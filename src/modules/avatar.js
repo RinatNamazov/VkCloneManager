@@ -9,10 +9,6 @@
  *
  *****************************************************************************/
 
-const inquirer = require("inquirer");
-const fsb = require("fs");
-const fs = fsb.promises;
-const fsc = fsb.constants;
 const utils = require("../utils")
 
 async function changeAvatar(accounts) {

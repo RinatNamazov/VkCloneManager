@@ -12,7 +12,6 @@
 "use strict";
 
 const path = require("path");
-const fs = require("fs").promises;
 const inquirer = require("inquirer");
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
@@ -94,7 +93,7 @@ Copyright (c) 2021 RINWARES <rinwares.com>
 		if (moduleName == "exit") {
 			break;
 		} else if (moduleName == "reload") {
-			await reloadModuleCommand(vkCloneManager, selectModuleQuestion);
+			await reloadModuleCommand(vkCloneManager);
 			selectModuleQuestion.choices = getModuleChoices(vkCloneManager);
 		} else {
 			await vkCloneManager.runModule(moduleName);

@@ -31,7 +31,7 @@ class VkCloneManager {
 		}
 	}
 
-	#captchaHandler({captcha_sid, captcha_img, resolve, vk}) {
+	captchaHandler({captcha_sid, captcha_img, resolve, vk}) {
 		console.log(`Account ${vk.session.username}: Trying to solve the captcha (${captcha_sid}):", ${captcha_img}`);
 
 		this.#rucaptcha.solve(captcha_img).then(answer => {
@@ -67,7 +67,7 @@ class VkCloneManager {
 			}
 		}
 
-		const captchaHandler = this.#rucaptcha != null ? this.#captchaHandler : null;
+		const captchaHandler = this.#rucaptcha != null ? this.captchaHandler : null;
 		for (let i in this.#config.accounts) {
 			const acc = this.#config.accounts[i];
 			if (acc.username != "" && acc.password != "") {

@@ -10,7 +10,6 @@
  *****************************************************************************/
 
 const inquirer = require("inquirer");
-const fs = require("fs").promises;
 const utils = require("../utils");
 
 async function advancedAddFriends(accounts) {

@@ -9,8 +9,6 @@
  *
  *****************************************************************************/
 
-const inquirer = require("inquirer");
-const easyvk = require("easyvk");
 const utils = require("../utils");
 
 async function joinGroup(accounts) {
